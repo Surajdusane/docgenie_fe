@@ -1,0 +1,27 @@
+{
+    "files.exclude": {
+        "node_modules": true,
+        "dist-electron": true,
+        "electron": true,
+        ".eslintrc.cts": true,
+        ".gitignore": true,
+        "components.json": true,
+        "electron-builder.json5": true,
+        "index.html": false,
+        "package-lock.json": true,
+        "package.json": true,
+        "postcss.config.js": true,
+        "README.md": true,
+        "tailwind.config.js": true,
+        "jsconfig.json": true,
+        "tsconfig.node.json": true,
+        "vite.config.js": true,
+        "public": true,
+        "eslint.config.js": true,
+        "tailwind.config.mjs": true,
+        "next.config.mjs": true,
+        "postcss.config.mjs": true,
+        "lib": true,
+        ".next": true,
+    }
+}
