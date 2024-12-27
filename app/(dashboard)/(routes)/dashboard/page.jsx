@@ -38,11 +38,15 @@ const page = () => {
   const handleDownload = async () => {
     setLoadingd(true);
     try {
+      // Set responseType as 'blob' to handle binary data (like ZIP files)
       const response = await axios.get("https://docgenie.onrender.com/convert-to-pdf-zip/", {
         params: {
           folder_name: "output"
-        }
+        },
+        responseType: 'blob'  // This is the key change
       });
+
+      // Create a Blob from the response data (ZIP file)
       const file = new Blob([response.data], { type: 'application/zip' });
 
       // Create a link element
@@ -55,12 +59,11 @@ const page = () => {
       link.click();
       document.body.removeChild(link);
     } catch (error) {
-      console.log(error);
+      console.error('Error downloading the ZIP file:', error);
     } finally {
       setLoadingd(false);
     }
   };
-  
   
   return (
     <div className="">
